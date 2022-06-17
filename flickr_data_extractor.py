@@ -57,12 +57,9 @@ class Flickr_Manager:  # ------------------------------------------------------
         data_all = pool.map(self.callMultiProcessFGM,enumerate(self.bboxes))
         pool.close()
         pool.join()
-        
         data_all = pd.concat(data_all,axis=0)
         data_all.sort_values(by=['datetaken'],inplace=True,ignore_index=True)
         data_all.drop_duplicates(inplace=True,ignore_index=True)
-        # GWF unique
-        data_all.dropna(axis=0,subset=['url_c'],inplace=True)
         print('\n\n--*-*-*-*-\t Run finished \t-*-*-*-*--')
         print(f'Total number of obs retrieved:\t{data_all.shape[0]}')
         self.data = data_all
