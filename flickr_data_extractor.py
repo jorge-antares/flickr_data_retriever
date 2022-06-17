@@ -6,7 +6,7 @@ Created by:
 
 #***************************************
 API settings needed:
-KEY = 'some key'
+KEY    = 'some key'
 SECRET = 'some secret'
 #***************************************
 
