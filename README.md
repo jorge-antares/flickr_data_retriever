@@ -9,7 +9,7 @@ indicate the number of segments to divide
 the BB along each axis (num_seg). Therefore
 total number of subareas is num_seg^2.
 
-Queries to flickrapi are limited to 400
+Queries to flickrapi are limited to 4000
 observations by the API, and afterthere
 these are repeated. The Flickr_Grid_Manager
 class ensures queries sent are <= 4000, 
