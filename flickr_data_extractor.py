@@ -154,14 +154,6 @@ class Flickr_Grid_Manager: # --------------------------------------------------
             data_grid['year']  = data_grid['datetaken'].apply(lambda x: x[0:4])
             data_grid['month'] = data_grid['datetaken'].apply(lambda x: x[5:7])
             data_grid['day']   = data_grid['datetaken'].apply(lambda x: x[8:10])
-            # GWF unique
-            try:
-                data_grid.dropna(axis=0,subset=['url_c'],inplace=True)
-            except KeyError:
-                pass
-            data_grid.drop_duplicates(
-                subset=['ownername','year','month','day','latitude','longitude'],
-                inplace=True,ignore_index=True)
         print(f'\nGrid: {self.grid_num},',end='\t')
         print(f'Initial obs:\t{self.total_obs}',end='')
         print(f'\nGrid: {self.grid_num},',end='\t')
