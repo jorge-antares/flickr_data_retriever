@@ -26,10 +26,20 @@ these are repeated.
 
 The Flickr_Grid_Manager class ensures 
 queries sent are <= 4000, by creating 
-several Flickr_Data_Retriever objects 
+several Flickr_Data_Retriever objects
 with a proper timestep that ensures 
 this constraint is met.
 
+User inputs:
+    - Bounding box (BB) as a list of
+      integers.
+    - Number of segments to divide
+      each axis of the BB.
+    - Initial and final year of the
+      search.
+    - Optional parameters to pass
+      to the Flicker API search
+      function.
 
 """
 import multiprocessing as mp
@@ -141,13 +151,11 @@ class Flickr_Grid_Manager: # --------------------------------------------------
                 break
             self.updateBatchAndTotals()
             
-        # 6. Post-process
+        # 7. Post-process
         data_grid = pd.concat(data_grid,axis=0)
         if data_grid.shape[0] > 0:
             data_grid.sort_values(by=['datetaken'],inplace=True,ignore_index=True)
-            drop_count = data_grid.shape[0]
             data_grid.drop_duplicates(inplace=True,ignore_index=True)
-            drop_count = drop_count - data_grid.shape[0]
             data_grid['dateupload'] = data_grid['dateupload'].apply(
                 lambda x: datetime.fromtimestamp(int(x)).strftime("%Y-%m-%d %I:%M:%S")
                 )
