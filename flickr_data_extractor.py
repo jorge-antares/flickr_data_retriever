@@ -41,6 +41,9 @@ User inputs:
       to the Flicker API search
       function.
 
+Output:
+    csv file saved on desired folder.
+
 """
 import multiprocessing as mp
 import pandas as pd
