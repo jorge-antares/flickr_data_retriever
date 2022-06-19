@@ -18,15 +18,10 @@ objects with a proper timestep that ensures
 this constraint is met.
 
 User inputs:
-    - Bounding box (BB) as a list of
-      integers.
-    - Number of segments to divide
-      each axis of the BB.
-    - Initial and final year of the
-      search.
-    - Optional parameters to pass
-      to the Flicker API search
-      function.
+- Bounding box (BB) as a list of integers.
+- Number of segments to divide each axis of the BB.
+- Initial and final year of the search.
+- Optional parameters to pass to the Flicker API search function.
 
 Output:
-    csv file saved on desired folder.
+- csv file saved on desired folder.
