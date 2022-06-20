@@ -150,7 +150,7 @@ class Flickr_Grid_Manager: # --------------------------------------------------
                                self.dates_batch[1]+self.delta_days
             
             # 6. Update Batch if date has not exceeded timeframe
-            if self.dates_batch[0] > self.dates_abs[1] or self.batch_obs == 0:
+            if self.dates_batch[0] > self.dates_abs[1]:
                 break
             self.updateBatchAndTotals()
             
