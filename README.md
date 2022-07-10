@@ -10,7 +10,7 @@ the BB along each axis (num_seg). Therefore
 total number of subareas is num_seg^2.
 
 Queries to flickrapi are limited to 4000
-observations by the API, and afterthere
+observations by the API and thereafter,
 these are repeated. The Flickr_Grid_Manager
 class ensures queries sent are <= 4000, 
 by creating several Flickr_Data_Retriever 
