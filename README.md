@@ -1,4 +1,4 @@
-# flickr_data_retriever
+# Flickr Data Retriever
 
 Flickr_Manager (FM)  reads data from the
 flickrapi and saves it as a csv.
